@@ -1,0 +1,14 @@
+{
+  "name": "Typing Racer",
+  "short_name": "TypingRacer",
+  "description": "A fast-paced typing game — type words before they reach the danger zone.",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#080c18",
+  "theme_color": "#080c18",
+  "icons": [
+    { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

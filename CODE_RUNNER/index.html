@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#080c18">
+  <meta name="description" content="Typing Racer — a fast-paced typing game. Type words before they reach the danger zone, chain combos, and beat your best WPM.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta property="og:title" content="Typing Racer">
+  <meta property="og:description" content="A fast-paced typing game — type words before they reach the danger zone.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <title>Typing Racer</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="favicon.svg">
+  <link rel="manifest" href="manifest.json">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <div class="topbar-left">
+      <div class="topbar-brand">
+  <div class="icon">&lt;/&gt;</div>
+  <span>CodeNest Racer</span>
+</div>
+    </div>
+    <div class="topbar-right">
+      <div class="stats">
+        <div class="stat-pill score" id="pillScore"><span class="label">Score</span><span class="value" id="valScore">0</span></div>
+        <div class="stat-pill level" id="pillLevel"><span class="label">Level</span><span class="value" id="valLevel">1</span></div>
+        <div class="stat-pill lives" id="pillLives"><span class="label">Lives</span><span class="value" id="valLives">♥♥♥♥♥</span></div>
+        <div class="stat-pill wpm" id="pillWpm"><span class="label">Wpm</span><span class="value" id="valWpm">0</span></div>
+        <div class="stat-pill combo" id="pillCombo"><span class="label">Combo</span><span class="value" id="valCombo">0×</span></div>
+        <div class="stat-pill best" id="pillBest"><span class="label">Best</span><span class="value" id="valBest">0</span></div>
+      </div>
+      <button class="icon-btn" id="soundBtn" aria-label="Toggle sound"></button>
+    </div>
+  </header>
+
+  <div class="stage" id="stage">
+    <canvas id="game"></canvas>
+    <div class="danger-zone" id="dangerZone"></div>
+    <div class="combo-fire" id="comboFire"></div>
+    <div class="flash" id="flash"></div>
+    <div class="toast" id="toast" aria-live="polite"></div>
+    <div class="powerup-indicator" id="powerupIndicator"></div>
+    <div class="empty-hint" id="emptyHint">
+      <div class="big">// waiting to start</div>
+      <div class="small">Press <strong>Start Race</strong> to spawn your first words</div>
+    </div>
+    <div class="countdown-overlay" id="countdownOverlay">
+      <div class="countdown-ring"><span class="countdown-num" id="countdownNum">3</span></div>
+    </div>
+  </div>
+
+  <div class="input-bar">
+    <div class="input-wrap">
+      <input
+        id="typeInput"
+        class="type-input"
+        type="text"
+        placeholder="Start typing..."
+        autocomplete="off"
+        autocapitalize="off"
+        autocorrect="off"
+        spellcheck="false"
+        enterkeyhint="send"
+        aria-label="Type the word shown on screen, then press Enter or Space"
+        disabled
+      >
+      <div class="input-hint">Press <kbd>Enter</kbd> or <kbd>Space</kbd> to submit · <kbd>Esc</kbd> to pause</div>
+    </div>
+    <button class="pause-btn" id="pauseBtn">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" id="pauseIcon"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg>
+      <span class="txt" id="pauseLabel">Pause</span>
+    </button>
+  </div>
+</div>
+
+<div class="modal-overlay" id="overlay" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="modal" id="modalBody"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

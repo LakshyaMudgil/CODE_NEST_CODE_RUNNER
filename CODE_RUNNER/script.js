@@ -1,6 +1,5 @@
 /* ==========================================================
-   Typing Racer — standalone game script
-   No dependencies. No build step. Pure canvas + vanilla JS.
+   Typing Racer 
    ========================================================== */
 (function(){
   'use strict';
@@ -853,7 +852,7 @@
     }
   });
   input.addEventListener('blur', ()=>{
-    // Keep the caret in the field during play so keystrokes never get lost
+  
     if(state==='playing'){
       setTimeout(()=>{ if(state==='playing') input.focus(); }, 10);
     }
@@ -870,8 +869,7 @@
   });
   stage.addEventListener('mousedown', ()=>{ if(state==='playing') input.focus(); });
 
-  // Auto-pause when the tab or window loses focus, so words don't
-  // silently run out the clock while the player is away.
+.
   document.addEventListener('visibilitychange', ()=>{
     if(document.hidden && state==='playing') pauseGame();
   });
@@ -884,10 +882,10 @@
   updateStatsUI();
   openModal('start');
 })();
-// Add this inside script.js right after drawStreaks(); in the draw() function:
+
 ctx.save();
 ctx.font = '900 120px "JetBrains Mono", monospace';
-ctx.fillStyle = 'rgba(255, 255, 255, 0.025)'; // Subdued watermark opacity
+ctx.fillStyle = 'rgba(255, 255, 255, 0.025)'; 
 ctx.textAlign = 'center';
 ctx.textBaseline = 'middle';
 ctx.fillText('</>', STAGE_W / 2, STAGE_H / 2);

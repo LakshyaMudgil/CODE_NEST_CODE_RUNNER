@@ -36,6 +36,7 @@
         <div class="stat-pill level" id="pillLevel"><span class="label">Level</span><span class="value" id="valLevel">1</span></div>
         <div class="stat-pill lives" id="pillLives"><span class="label">Lives</span><span class="value" id="valLives">♥♥♥♥♥</span></div>
         <div class="stat-pill wpm" id="pillWpm"><span class="label">Wpm</span><span class="value" id="valWpm">0</span></div>
+        <div class="stat-pill acc" id="pillAcc"><span class="label">Acc</span><span class="value" id="valAcc">100%</span></div>
         <div class="stat-pill combo" id="pillCombo"><span class="label">Combo</span><span class="value" id="valCombo">0×</span></div>
         <div class="stat-pill best" id="pillBest"><span class="label">Best</span><span class="value" id="valBest">0</span></div>
       </div>
@@ -74,6 +75,7 @@
         aria-label="Type the word shown on screen, then press Enter or Space"
         disabled
       >
+      <div class="input-char-overlay" id="inputCharOverlay" aria-hidden="true"></div>
       <div class="input-hint">Press <kbd>Enter</kbd> or <kbd>Space</kbd> to submit · <kbd>Esc</kbd> to pause</div>
     </div>
     <button class="pause-btn" id="pauseBtn">
